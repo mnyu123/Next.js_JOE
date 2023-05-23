@@ -1,5 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,7 +12,48 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {/* Bootstrap Sidebar 템플릿 추가 */}
+        <div id="wrapper">
+          {/* Sidebar */}
+          <div id="sidebar-wrapper">
+            <ul className="sidebar-nav">
+              <li className="sidebar-brand">
+                <a href="#">Start Bootstrap</a>
+              </li>
+              <li>
+                <a href="#">Dashboard</a>
+              </li>
+              <li>
+                <a href="#">Shortcuts</a>
+              </li>
+              <li>
+                <a href="#">Overview</a>
+              </li>
+              <li>
+                <a href="#">Events</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Services</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+          {/* Page Content */}
+          <div id="page-content-wrapper">
+            <div className="container-fluid">
+              <h1>Simple Sidebar</h1>
+              <p>This is a template showcasing the optional Bootstrap theme stylesheet included in the starter template.</p>
+              {children}
+            </div>
+          </div>
+        </div>
+      </body>
     </html>
   )
 }
